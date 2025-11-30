@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILVER SEETHE BLUE — DONK666</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #F5F5F5;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ШАПКА — копируем из вашего index.html */
+        header {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .head {
+            text-align: center;
+            padding-left: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .head a {
+            color: inherit;
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        .head a:hover {
+            text-decoration: underline;
+            color: #ccc;
+        }
+
+        .new {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-align: center;
+            padding-left: 50px;
+        }
+
+        .new a {
+            color: inherit;
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        .new a:hover {
+            text-decoration: underline;
+            color: #ccc;
+        }
+
+        .accessories {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-align: center;
+            padding-left: 25px;
+        }
+
+        .accessories a {
+            color: inherit;
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        .accessories a:hover {
+            text-decoration: underline;
+            color: #ccc;
+        }
+
+        .discounts {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-align: center;
+            padding-left: 25px;
+        }
+
+        .discounts a {
+            color: inherit;
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        .discounts a:hover {
+            text-decoration: underline;
+            color: #ccc;
+        }
+
+        /* СТРАНИЦА ТОВАРА */
+        .product-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .product-image {
+            flex: 0 0 50%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .brand {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .sold-out-badge {
+            background-color: black;
+            color: white;
+            font-size: 12px;
+            padding: 4px 8px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .dial-color {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .color-selector {
+            width: 30px;
+            height: 30px;
+            background-color: #4a90e2;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .color-selector::after {
+            content: "×";
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .buy-button {
+            width: 100%;
+            padding: 16px;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            border: none;
+            cursor: not-allowed;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .shop-button {
+            width: 100%;
+            padding: 16px;
+            background-color: #9b83e8;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .more-payment {
+            text-align: center;
+            font-size: 12px;
+            text-decoration: underline;
+            cursor: pointer;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #333;
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+
+        .description p {
+            margin-bottom: 12px;
+        }
+
+        /* ФУТЕР — копируем из вашего index.html */
+        .site-footer {
+            background-color: black;
+            color: #ccc;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .social-links a {
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .product-page {
+                flex-direction: column;
+            }
+            .product-image {
+                flex: 0 0 100%;
+            }
+            .product-title {
+                font-size: 28px;
+            }
+            .price {
+                font-size: 24px;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ШАПКА — без изменений -->
+    <header>
+        <div class="head">
+            <a href="index.html">DONK666</a>
+        </div>
+        <div class="new">
+            <a href="index.html">News</a>
+        </div>
+        <div class="accessories">
+            <a href="Accessories.html">Accessories</a>
+        </div>
+        <div class="discounts">
+            <a href="index.html">Discounts</a>
+        </div>
+    </header>
+
+    <!-- КОНТЕНТ СТРАНИЦЫ -->
+    <main class="product-page">
+        <div class="product-image">
+            <img src="https://alabaster.industries/cdn/shop/files/tempDover_0008_Layer1.jpg?v=1733358514&width=1000" alt="Silver Seethe Blue">
+        </div>
+
+        <div class="product-info">
+            <div class="brand">ALABASTER</div>
+            <h1 class="product-title">SILVER SEETHE BLUE</h1>
+            <div class="sold-out-badge">SOLD OUT</div>
+            <div class="price">$2,400.00</div>
+
+            <div class="dial-color">DIAL COLOR: BLUE</div>
+            <div class="color-selector"></div>
+
+            <button class="buy-button">SOLD OUT</button>
+            <button class="shop-button">Buy with shop</button>
+            <div class="more-payment">MORE PAYMENT OPTIONS</div>
+
+            <div class="description">
+                <p>STERLING SILVER BAND, CLASP LINKS, AND CASE CAGE. RHODIUM PLATED FOR LASTING GUNMETAL FINISH WITH NICKEL INTERMEDIARY LAYER.</p>
+                <p>36 MM WATERPROOF STAINLESS STEEL WATCH CASE AND STAINLESS CLASP MECHANISM.</p>
+                <p>SWISS THREE HAND AUTOMATIC MECHANICAL MOVEMENT, MOUNTED WITH A PAD PRINTED DIAL.</p>
+                <p>EACH WATCH IS DESIGNED, MADE, POLISHED, FIT, AND ASSEMBLED BY HAND.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ФУТЕР — без изменений -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>donk666</h3>
+                <p>The time you deserve</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacts</h4>
+                <p>fpay033@gmail.com</p>
+                <p>+7 777-777-77-77</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Telegram">✉️</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 donk666. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
